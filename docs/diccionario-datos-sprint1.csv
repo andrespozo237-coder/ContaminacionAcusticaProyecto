@@ -1,0 +1,70 @@
+Universidad de las Fuerzas Armadas ESPE,,,,,,
+DICCIONARIO DE DATOS · SPRINT 1,,,,,,
+Evaluación de la contaminación acústica y su efecto sobre la atención y el rendimiento académico durante las evaluaciones en ambientes universitarios,,,,,,
+,,,,,,
+Tabla: perfiles  ·  Datos del estudiante que participa en la prueba.,,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+perfiles,id,uuid,"PK, FK",No,Referencia a auth.users(id); se borra en cascada,"Identificador del estudiante, igual al de su cuenta"
+perfiles,nombre,text,,No,Entre 3 y 60 caracteres,Nombre completo
+perfiles,carrera,text,,Sí,Entre 3 y 100 caracteres si no es nulo,Carrera que cursa
+perfiles,semestre,smallint,,Sí,Entre 1 y 12 si no es nulo,Semestre actual
+perfiles,creado_en,timestamptz,,No,Por defecto now(),Fecha de creación del perfil
+,,,,,,
+"Tabla: textos  ·  Los dos textos de lectura, uno por escenario.",,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+textos,id,smallint,PK,No,Valores 1 y 2,Identificador del texto
+textos,titulo,text,,No,,Título del texto
+textos,contenido,text,,No,,Texto completo que lee el estudiante
+textos,num_palabras,int,,Sí,,Número de palabras (332 y 334)
+,,,,,,
+Tabla: preguntas  ·  Preguntas de opción múltiple de cada texto.,,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+preguntas,id,serial,PK,No,Autoincremental,Identificador de la pregunta
+preguntas,texto_id,smallint,FK,No,Referencia a textos(id),Texto al que pertenece
+preguntas,orden,smallint,,No,UNIQUE junto con texto_id,Posición de la pregunta (1 a 10)
+preguntas,enunciado,text,,No,,Pregunta que se muestra
+preguntas,opciones,jsonb,,No,Arreglo de 4 opciones,"Opciones de respuesta A, B, C y D"
+,,,,,,
+"Tabla: respuestas_correctas  ·  Respuesta correcta de cada pregunta, separada para que el navegador no la vea.",,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+respuestas_correctas,pregunta_id,int,"PK, FK",No,Referencia a preguntas(id),Pregunta a la que corresponde
+respuestas_correctas,correcta,smallint,,No,Entre 0 y 3,Índice de la opción correcta
+,,,,,,
+Tabla: sesiones  ·  Una aplicación completa de la prueba por estudiante.,,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+sesiones,id,uuid,PK,No,Generado con gen_random_uuid(),Identificador de la sesión
+sesiones,usuario_id,uuid,FK,No,"Referencia a perfiles(id); cascada; índice único parcial (una sesión abierta por usuario)",Estudiante que realiza la prueba
+sesiones,tipo_audifono,text,,No,'diadema' o 'boton',Tipo de audífonos propios del estudiante
+sesiones,etapa,text,,No,"Por defecto 'verificacion'; valores: verificacion, escenario1, pausa, escenario2, completada",Etapa actual de la prueba
+sesiones,completada,boolean,,No,Columna generada (etapa = 'completada'),Indica si terminó la prueba
+sesiones,creada_en,timestamptz,,No,Por defecto now(),Fecha y hora de inicio
+,,,,,,
+Tabla: escenarios  ·  Cada uno de los dos escenarios sonoros de una sesión.,,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+escenarios,id,uuid,PK,No,Generado con gen_random_uuid(),Identificador del escenario
+escenarios,sesion_id,uuid,FK,No,Referencia a sesiones(id); cascada,Sesión a la que pertenece
+escenarios,tipo,text,,No,'ruido' o 'calma'; UNIQUE junto con sesion_id,Sonido del escenario (un ruido y una calma por sesión)
+escenarios,texto_id,smallint,FK,No,Referencia a textos(id),Texto que se lee en este escenario
+escenarios,posicion,smallint,,No,1 o 2; UNIQUE junto con sesion_id,Si es el primer o segundo escenario
+escenarios,tiempo_lectura_ms,int,,Sí,Entre 0 y 1 800 000,Tiempo de lectura en milisegundos
+escenarios,cambios_pestana,int,,No,Por defecto 0,Veces que el estudiante salió de la pestaña
+,,,,,,
+Tabla: respuestas  ·  Respuesta del estudiante a cada pregunta.,,,,,,
+Tabla,Columna,Tipo,Clave,Nulo,Restricción,Descripción
+respuestas,id,serial,PK,No,Autoincremental,Identificador de la respuesta
+respuestas,escenario_id,uuid,FK,No,Referencia a escenarios(id); cascada,Escenario en el que se respondió
+respuestas,orden,smallint,,No,Entre 1 y 10; UNIQUE junto con escenario_id,Número de pregunta respondida dentro del texto del escenario
+respuestas,opcion_elegida,smallint,,No,Entre 0 y 3,Opción que marcó el estudiante
+respuestas,es_correcta,boolean,,Sí,Se calcula en el servidor (Sprint 2),Si la respuesta fue correcta
+respuestas,tiempo_ms,int,,No,Entre 0 y 1 800 000,Tiempo de respuesta en milisegundos
+respuestas,creada_en,timestamptz,,No,Por defecto now(),Fecha y hora de la respuesta
+,,,,,,
+RELACIONES ENTRE TABLAS,,,,,,
+Tabla origen,Columna,Tabla destino,Columna,Cardinalidad,Significado,
+auth.users,id,perfiles,id,1 : 1,Cada cuenta de Supabase Auth tiene un perfil,
+perfiles,id,sesiones,usuario_id,1 : N,Un estudiante puede tener una o más sesiones,
+sesiones,id,escenarios,sesion_id,1 : N,"Cada sesión tiene sus escenarios (por regla de negocio 2: ruido y calma)",
+escenarios,id,respuestas,escenario_id,1 : N,Cada escenario guarda hasta 10 respuestas,
+textos,id,preguntas,texto_id,1 : N,Cada texto tiene 10 preguntas,
+textos,id,escenarios,texto_id,1 : N,Texto asignado a cada escenario según el contrabalanceo,
+preguntas,id,respuestas_correctas,pregunta_id,1 : 1,Cada pregunta tiene una sola respuesta correcta,
