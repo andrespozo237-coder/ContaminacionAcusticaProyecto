@@ -4,6 +4,12 @@
 **Autores:** Fernando Camatón-Realpes · Andrés Pozo-García  
 **Motor de base de datos:** PostgreSQL (Supabase)
 
+## Gestión Ágil del Proyecto (Scrum)
+
+- **Tablero Scrum (GitHub Project):** [Planificación Scrum — Contaminación Acústica](https://github.com/users/Rarexz08/projects/1)
+- **Hitos de Revisión (Milestones):** [Ver los 4 Hitos de Revisión](https://github.com/andrespozo237-coder/ContaminacionAcusticaProyecto/milestones)
+- **Product & Sprint Backlog (Issues):** [Ver las 20 Actividades (ACT-01 a ACT-20)](https://github.com/andrespozo237-coder/ContaminacionAcusticaProyecto/issues)
+
 ---
 
 ## Avance · Sprint 1 (Hito 1: Base de datos)
