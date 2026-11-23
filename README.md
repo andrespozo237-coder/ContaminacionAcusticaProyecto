@@ -16,11 +16,11 @@
 
 Este repositorio contiene los entregables correspondientes al **Sprint 1** del desarrollo del aplicativo experimental (comprensión lectora bajo dos escenarios sonoros: ruido urbano y sonido de calma):
 
-- **Diagrama entidad-relación:** [`docs/modelo-er.png`](docs/modelo-er.png) · [`docs/modelo-er.svg`](docs/modelo-er.svg)
+- **Diagrama entidad-relación:** [`docs/Modelo_Fisico.png`](docs/Modelo_Fisico.png)
 - **Diccionario de datos:** [`docs/diccionario-datos-sprint1.csv`](docs/diccionario-datos-sprint1.csv)
 - **Script SQL (PostgreSQL / Supabase):** [`supabase/sprint1_base_datos.sql`](supabase/sprint1_base_datos.sql)
 
-![Modelo entidad-relación de la base de datos](docs/modelo-er.png)
+![Modelo entidad-relación de la base de datos](docs/Modelo_Fisico.png)
 
 ## Estructura de la base de datos (7 tablas)
 
