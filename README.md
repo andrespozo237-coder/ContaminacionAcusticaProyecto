@@ -6,9 +6,15 @@
 
 ## Gestión Ágil del Proyecto (Scrum)
 
-- **Tablero Scrum (GitHub Project):** [Planificación Scrum — Contaminación Acústica](https://github.com/users/Rarexz08/projects/1)
+- **Tablero Scrum (GitHub Project):** [Planificación Scrum — Contaminación Acústica](https://github.com/users/andrespozo237-coder/projects/3)
 - **Hitos de Revisión (Milestones):** [Ver los 4 Hitos de Revisión](https://github.com/andrespozo237-coder/ContaminacionAcusticaProyecto/milestones)
 - **Product & Sprint Backlog (Issues):** [Ver las 20 Actividades (ACT-01 a ACT-20)](https://github.com/andrespozo237-coder/ContaminacionAcusticaProyecto/issues)
+
+## Arquitectura del Proyecto
+
+- **Diagrama de arquitectura:** [`docs/arquitectura.png`](docs/arquitectura.png) · versión vectorial [`docs/arquitectura.svg`](docs/arquitectura.svg)
+
+![Arquitectura del proyecto](docs/arquitectura.png)
 
 ---
 

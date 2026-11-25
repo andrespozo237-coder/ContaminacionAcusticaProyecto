@@ -1,0 +1,460 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" font-family="Segoe UI, Lato, Arial, sans-serif">
+<defs>
+  <marker id="flecha" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+    <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#2b2b2b"/>
+  </marker>
+</defs>
+
+<!-- Fondo -->
+<rect width="100%" height="100%" fill="#ffffff"/>
+
+<!-- Título -->
+<text x="800" y="36" text-anchor="middle" font-size="22" font-weight="700" fill="#1e1e1e">Arquitectura del proyecto</text>
+
+<!-- Encabezados de columnas -->
+<rect x="20" y="56" width="176" height="28" fill="#4c4c4c"/>
+<text x="108" y="74" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.05em" fill="#ffffff">USUARIO · LOCAL</text>
+
+<rect x="216" y="56" width="710" height="28" fill="#2b2b2b"/>
+<text x="571" y="74" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.05em" fill="#ffffff">NÚCLEO DE IA Y APLICACIÓN WEB</text>
+
+<rect x="946" y="56" width="312" height="28" fill="#4c4c4c"/>
+<text x="1102" y="74" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.05em" fill="#ffffff">NUBE</text>
+
+<rect x="1278" y="56" width="302" height="28" fill="#4c4c4c"/>
+<text x="1429" y="74" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="0.05em" fill="#ffffff">SALIDA</text>
+
+<!-- Separadores verticales -->
+<line x1="206" y1="56" x2="206" y2="700" stroke="#c8c8c8" stroke-width="1.3" stroke-dasharray="5 5"/>
+<line x1="936" y1="56" x2="936" y2="700" stroke="#c8c8c8" stroke-width="1.3" stroke-dasharray="5 5"/>
+<line x1="1268" y1="56" x2="1268" y2="700" stroke="#c8c8c8" stroke-width="1.3" stroke-dasharray="5 5"/>
+
+<!-- ================= COLUMNA 1: USUARIO · LOCAL ================= -->
+
+<!-- Cámara web -->
+<g transform="translate(74,108)">
+  <circle cx="34" cy="27" r="22" fill="#1e1e1e"/>
+  <circle cx="34" cy="27" r="13" fill="#e5e5e5"/>
+  <circle cx="34" cy="27" r="7" fill="#1e1e1e"/>
+  <circle cx="30.5" cy="23.5" r="2.3" fill="#ffffff"/>
+  <rect x="26" y="48" width="16" height="8" fill="#1e1e1e"/>
+  <path d="M 14 62 Q 34 52 54 62 L 54 66 L 14 66 Z" fill="#1e1e1e"/>
+</g>
+<text x="108" y="191" text-anchor="middle" font-size="12" font-weight="700" fill="#1e1e1e">Cámara web</text>
+<text x="108" y="206" text-anchor="middle" font-size="9.5" fill="#666666">sin grabar</text>
+
+<line x1="108" y1="214" x2="108" y2="266" stroke="#2b2b2b" stroke-width="1.4" marker-end="url(#flecha)"/>
+<rect x="74" y="231" width="68" height="16" fill="#ffffff"/>
+<text x="108" y="242" text-anchor="middle" font-size="9" fill="#444444">Video local</text>
+
+<!-- Computador -->
+<g transform="translate(52,272)">
+  <rect x="0" y="0" width="112" height="76" rx="5" fill="#1e1e1e"/>
+  <rect x="8" y="8" width="96" height="56" fill="#e5e5e5"/>
+  <rect x="44" y="76" width="24" height="13" fill="#1e1e1e"/>
+  <rect x="26" y="89" width="60" height="6" rx="2" fill="#1e1e1e"/>
+</g>
+<text x="108" y="387" text-anchor="middle" font-size="12" font-weight="700" fill="#1e1e1e">Computador</text>
+<text x="108" y="402" text-anchor="middle" font-size="9.5" fill="#666666">Chrome · Edge · Firefox</text>
+
+<line x1="108" y1="412" x2="108" y2="482" stroke="#2b2b2b" stroke-width="1.4" marker-end="url(#flecha)"/>
+<rect x="74" y="438" width="68" height="16" fill="#ffffff"/>
+<text x="108" y="450" text-anchor="middle" font-size="9" fill="#444444">Audio MP3</text>
+
+<!-- Audífonos -->
+<g transform="translate(60,480)">
+  <path d="M 14 45 A 34 34 0 0 1 82 45" fill="none" stroke="#1e1e1e" stroke-width="7" stroke-linecap="round"/>
+  <rect x="6" y="43" width="15" height="30" rx="6.5" fill="#1e1e1e"/>
+  <rect x="75" y="43" width="15" height="30" rx="6.5" fill="#1e1e1e"/>
+</g>
+<text x="108" y="576" text-anchor="middle" font-size="12" font-weight="700" fill="#1e1e1e">Audífonos</text>
+<text x="108" y="591" text-anchor="middle" font-size="9.5" fill="#666666">estéreo · 50 % vol.</text>
+
+<!-- ================= COLUMNA 2: NÚCLEO DE IA Y APLICACIÓN WEB ================= -->
+
+<!-- Flecha Computador <-> Cliente web -->
+<line x1="170" y1="312" x2="230" y2="312" stroke="#2b2b2b" stroke-width="1.4" marker-start="url(#flecha)" marker-end="url(#flecha)"/>
+<rect x="174" y="293" width="52" height="14" fill="#ffffff"/>
+<text x="200" y="303" text-anchor="middle" font-size="8.8" font-weight="600" fill="#333333">Interacción</text>
+
+<!-- Ventana Cliente web (limpia y visual) -->
+<g transform="translate(236,104)">
+  <rect x="0" y="0" width="670" height="312" rx="8" fill="#fafafa" stroke="#1e1e1e" stroke-width="1.6"/>
+  <path d="M 0 8 Q 0 0 8 0 L 662 0 Q 670 0 670 8 L 670 28 L 0 28 Z" fill="#2b2b2b"/>
+  <circle cx="16" cy="14" r="3.5" fill="#ffffff"/>
+  <circle cx="29" cy="14" r="3.5" fill="#ffffff"/>
+  <circle cx="42" cy="14" r="3.5" fill="#ffffff"/>
+  <text x="62" y="18" font-size="10.5" font-weight="700" fill="#ffffff">Cliente web</text>
+  <text x="129" y="18" font-size="9.5" font-style="italic" fill="#cfcfcf">· procesamiento local en navegador</text>
+
+  <!-- Chips compactos de stack en cabecera -->
+  <g transform="translate(362,6)">
+    <!-- React -->
+    <g transform="translate(10,8) scale(0.75)">
+      <circle cx="0" cy="0" r="2" fill="#61DAFB"/>
+      <ellipse cx="0" cy="0" rx="9" ry="3.5" fill="none" stroke="#61DAFB" stroke-width="1.5"/>
+      <ellipse cx="0" cy="0" rx="9" ry="3.5" fill="none" stroke="#61DAFB" stroke-width="1.5" transform="rotate(60)"/>
+      <ellipse cx="0" cy="0" rx="9" ry="3.5" fill="none" stroke="#61DAFB" stroke-width="1.5" transform="rotate(120)"/>
+    </g>
+    <text x="22" y="12" font-size="9" font-weight="600" fill="#e8e8e8">React 18</text>
+
+    <!-- Vite -->
+    <g transform="translate(82,8) scale(0.75)">
+      <polygon points="0,8 -8,-7 8,-7" fill="#646CFF"/>
+      <polygon points="1,-8 -3.5,0 1,0 -1,7 5,-2 1,-2" fill="#FFCA28"/>
+    </g>
+    <text x="94" y="12" font-size="9" font-weight="600" fill="#e8e8e8">Vite 5</text>
+
+    <!-- Supabase SDK -->
+    <g transform="translate(142,8) scale(0.75)">
+      <path d="M 1,8 C 0.4,8.7 -0.8,8.2 -0.8,7.3 L -0.8,-0.8 L 7,-0.8 C 8,-0.8 8.6,0.4 7.9,1.2 Z" fill="#249361"/>
+      <path d="M -1,-8 C -0.4,-8.7 0.8,-8.2 0.8,-7.3 L 0.8,0.8 L -7,0.8 C -8,0.8 -8.6,-0.4 -7.9,-1.2 Z" fill="#3ECF8E"/>
+    </g>
+    <text x="154" y="12" font-size="9" font-weight="600" fill="#e8e8e8">Supabase SDK</text>
+  </g>
+
+  <!-- ===== 4 MÓDULOS VISUALES GRANDES (SIN PÁRRAFOS) ===== -->
+
+  <!-- Módulo Superior Izquierdo: Web Audio API (FFT) -->
+  <rect x="24" y="46" width="260" height="106" rx="7" fill="#ffffff" stroke="#555555" stroke-width="1.3"/>
+  <!-- Gráfico grande de espectro FFT monocromático -->
+  <g transform="translate(46,74)">
+    <line x1="0" y1="46" x2="72" y2="46" stroke="#888888" stroke-width="1.2"/>
+    <rect x="4" y="30" width="7" height="16" rx="1" fill="#888888"/>
+    <rect x="15" y="18" width="7" height="28" rx="1" fill="#444444"/>
+    <rect x="26" y="26" width="7" height="20" rx="1" fill="#777777"/>
+    <rect x="37" y="4" width="7" height="42" rx="1" fill="#1e1e1e"/>
+    <rect x="48" y="14" width="7" height="32" rx="1" fill="#3a3a3a"/>
+    <rect x="59" y="28" width="7" height="18" rx="1" fill="#888888"/>
+    <!-- Umbral de pico -->
+    <line x1="0" y1="12" x2="72" y2="12" stroke="#1e1e1e" stroke-width="1.1" stroke-dasharray="3 2"/>
+    <circle cx="40.5" cy="4" r="3" fill="#1e1e1e"/>
+  </g>
+  <text x="134" y="92" font-size="12.5" font-weight="700" fill="#1e1e1e">Web Audio API</text>
+  <text x="134" y="110" font-size="10" fill="#555555">Análisis FFT</text>
+  <text x="134" y="126" font-size="9.2" font-style="italic" fill="#777777">picos MP3 · local</text>
+
+  <!-- Flecha FFT -> Correlación -->
+  <line x1="286" y1="99" x2="378" y2="99" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="332" y="90" text-anchor="middle" font-size="9.2" font-weight="600" fill="#333333">Picos ruido</text>
+
+  <!-- Módulo Superior Derecho: Correlación -->
+  <rect x="384" y="46" width="262" height="106" rx="7" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.6"/>
+  <!-- Gráfico grande de correlación (onda + caída atención) -->
+  <g transform="translate(406,72)">
+    <rect x="0" y="0" width="74" height="52" rx="4" fill="#f2f2f2" stroke="#cccccc" stroke-width="1"/>
+    <polyline points="6,36 18,36 24,14 30,36 46,36 52,18 58,36 68,36" fill="none" stroke="#1e1e1e" stroke-width="2" stroke-linejoin="round"/>
+    <polyline points="6,16 22,16 28,38 44,24 54,42 68,26" fill="none" stroke="#777777" stroke-width="1.6" stroke-dasharray="3 2"/>
+    <circle cx="24" cy="14" r="2.8" fill="#1e1e1e"/>
+    <circle cx="52" cy="18" r="2.8" fill="#1e1e1e"/>
+  </g>
+  <text x="496" y="92" font-size="12.5" font-weight="700" fill="#1e1e1e">Correlación</text>
+  <text x="496" y="110" font-size="10" fill="#555555">Ruido vs. atención</text>
+  <text x="496" y="126" font-size="9.2" font-style="italic" fill="#777777">métricas y tiempos</text>
+
+  <!-- Módulo Inferior Izquierdo: MediaPipe (Visión IA) -->
+  <rect x="24" y="184" width="260" height="108" rx="7" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.6"/>
+  <!-- Gráfico grande de rostro + malla de landmarks monocromático + logo MediaPipe color -->
+  <g transform="translate(44,202)">
+    <!-- Silueta facial + malla -->
+    <ellipse cx="34" cy="36" rx="22" ry="27" fill="#f0f0f0" stroke="#1e1e1e" stroke-width="1.6"/>
+    <!-- Puntos de landmarks y líneas de malla -->
+    <polyline points="20,28 28,25 34,29 40,25 48,28" fill="none" stroke="#555555" stroke-width="1"/>
+    <polyline points="34,15 34,39 27,48 34,50 41,48 34,39" fill="none" stroke="#555555" stroke-width="1"/>
+    <line x1="20" y1="28" x2="27" y2="48" stroke="#888888" stroke-width="0.9"/>
+    <line x1="48" y1="28" x2="41" y2="48" stroke="#888888" stroke-width="0.9"/>
+    <circle cx="25" cy="28" r="2.4" fill="#1e1e1e"/>
+    <circle cx="43" cy="28" r="2.4" fill="#1e1e1e"/>
+    <circle cx="34" cy="39" r="2.1" fill="#1e1e1e"/>
+    <circle cx="27" cy="48" r="1.8" fill="#1e1e1e"/>
+    <circle cx="41" cy="48" r="1.8" fill="#1e1e1e"/>
+    <circle cx="34" cy="15" r="1.8" fill="#1e1e1e"/>
+    <!-- Pequeño logo oficial MediaPipe a color -->
+    <g transform="translate(58,12) scale(0.9)">
+      <polygon points="-9,-6 -4,-9 0,-2 4,-9 9,-6 9,6 4,9 4,-1 0,5 -4,-1 -4,9 -9,6" fill="#0097A7"/>
+      <circle cx="-6.5" cy="-6" r="1.8" fill="#00BCD4"/>
+      <circle cx="6.5" cy="-6" r="1.8" fill="#00BCD4"/>
+    </g>
+  </g>
+  <text x="134" y="230" font-size="12.5" font-weight="700" fill="#1e1e1e">MediaPipe</text>
+  <text x="134" y="248" font-size="10" fill="#555555">Face Landmarker</text>
+  <text x="134" y="264" font-size="9.2" font-style="italic" fill="#777777">cabeza y mirada</text>
+
+  <!-- Flecha MediaPipe -> Modelo ML -->
+  <line x1="286" y1="238" x2="378" y2="238" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="332" y="229" text-anchor="middle" font-size="9.2" font-weight="600" fill="#333333">Rasgos</text>
+
+  <!-- Módulo Inferior Derecho: Modelo ML -->
+  <rect x="384" y="184" width="262" height="108" rx="7" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.6"/>
+  <!-- Gráfico grande de red neuronal / clasificador monocromático -->
+  <g transform="translate(442,238) scale(1.7)">
+    <circle cx="-15" cy="-10" r="3" fill="#1e1e1e"/>
+    <circle cx="-15" cy="0" r="3" fill="#1e1e1e"/>
+    <circle cx="-15" cy="10" r="3" fill="#1e1e1e"/>
+    <circle cx="0" cy="-12" r="3" fill="#444444"/>
+    <circle cx="0" cy="0" r="3.2" fill="#1e1e1e"/>
+    <circle cx="0" cy="12" r="3" fill="#444444"/>
+    <circle cx="15" cy="-6" r="3.2" fill="#1e1e1e"/>
+    <circle cx="15" cy="6" r="3.2" fill="#666666"/>
+    <line x1="-15" y1="-10" x2="0" y2="-12" stroke="#555555" stroke-width="1"/>
+    <line x1="-15" y1="-10" x2="0" y2="0" stroke="#555555" stroke-width="1"/>
+    <line x1="-15" y1="0" x2="0" y2="-12" stroke="#555555" stroke-width="1"/>
+    <line x1="-15" y1="0" x2="0" y2="0" stroke="#555555" stroke-width="1"/>
+    <line x1="-15" y1="0" x2="0" y2="12" stroke="#555555" stroke-width="1"/>
+    <line x1="-15" y1="10" x2="0" y2="0" stroke="#555555" stroke-width="1"/>
+    <line x1="-15" y1="10" x2="0" y2="12" stroke="#555555" stroke-width="1"/>
+    <line x1="0" y1="-12" x2="15" y2="-6" stroke="#1e1e1e" stroke-width="1.1"/>
+    <line x1="0" y1="0" x2="15" y2="-6" stroke="#1e1e1e" stroke-width="1.1"/>
+    <line x1="0" y1="0" x2="15" y2="6" stroke="#1e1e1e" stroke-width="1.1"/>
+    <line x1="0" y1="12" x2="15" y2="6" stroke="#1e1e1e" stroke-width="1.1"/>
+  </g>
+  <text x="496" y="230" font-size="12.5" font-weight="700" fill="#1e1e1e">Modelo ML</text>
+  <text x="496" y="248" font-size="10" fill="#555555">Atento / Distraído</text>
+  <text x="496" y="264" font-size="9.2" font-style="italic" fill="#777777">JSON / ONNX local</text>
+
+  <!-- Flecha Modelo ML -> Correlación -->
+  <line x1="515" y1="184" x2="515" y2="158" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+  <text x="524" y="174" font-size="9" font-weight="600" fill="#333333">Estado</text>
+</g>
+
+<!-- Flecha Entrenamiento ML -> Modelo ML -->
+<line x1="751" y1="464" x2="751" y2="420" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<rect x="698" y="434" width="106" height="16" fill="#ffffff"/>
+<text x="751" y="446" text-anchor="middle" font-size="9" font-weight="600" fill="#333333">Modelo exportado</text>
+
+<!-- Entrenamiento ML Offline (gráfico, minimalista) -->
+<g transform="translate(236,464)">
+  <rect x="0" y="0" width="670" height="114" rx="7" fill="#fafafa" stroke="#666666" stroke-width="1.3" stroke-dasharray="5 3"/>
+  <text x="335" y="20" text-anchor="middle" font-size="9.8" font-weight="700" letter-spacing="0.05em" fill="#444444">ENTRENAMIENTO ML · OFFLINE</text>
+
+  <!-- 1. Dataset público (ícono grande) -->
+  <g transform="translate(36,36)">
+    <path d="M 0 0 L 28 0 L 38 10 L 38 50 L 0 50 Z" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.6"/>
+    <polygon points="28,0 28,10 38,10" fill="#cfcfcf" stroke="#1e1e1e" stroke-width="1.3"/>
+    <rect x="6" y="16" width="26" height="7" fill="#1e1e1e"/>
+    <line x1="6" y1="30" x2="32" y2="30" stroke="#666666" stroke-width="1.4"/>
+    <line x1="6" y1="38" x2="32" y2="38" stroke="#666666" stroke-width="1.4"/>
+    <line x1="19" y1="23" x2="19" y2="44" stroke="#888888" stroke-width="1.2"/>
+    <text x="50" y="21" font-size="11" font-weight="700" fill="#1e1e1e">Students Attention</text>
+    <text x="50" y="38" font-size="9.5" fill="#666666">~6,244 reg. · CSV</text>
+  </g>
+
+  <line x1="212" y1="62" x2="254" y2="62" stroke="#2b2b2b" stroke-width="1.4" marker-end="url(#flecha)"/>
+
+  <!-- 2. Python + Colab (logos grandes a color) -->
+  <g transform="translate(274,36)">
+    <!-- Logo Python -->
+    <g transform="translate(18,16) scale(1.15)">
+      <path d="M -2,-10 C -7,-10 -7,-7 -7,-4 L -7,-2 L 1,-2 L 1,-1 L -9,-1 C -11,-1 -12,1 -12,4 C -12,7 -11,9 -9,9 L -6,9 L -6,6 C -6,3 -4,2 -1,2 L 4,2 C 6,2 7,0 7,-2 L 7,-7 C 7,-9 5,-10 2,-10 Z" fill="#3776AB"/>
+      <circle cx="-3.5" cy="-6.5" r="1.2" fill="#ffffff"/>
+      <path d="M 2,12 C 7,12 7,9 7,6 L 7,4 L -1,4 L -1,3 L 9,3 C 11,3 12,1 12,-2 C 12,-5 11,-7 9,-7 L 6,-7 L 6,-4 C 6,-1 4,0 1,0 L -4,0 C -6,0 -7,2 -7,4 L -7,9 C -7,11 -5,12 -2,12 Z" fill="#FFD43B"/>
+      <circle cx="3.5" cy="8.5" r="1.2" fill="#ffffff"/>
+    </g>
+    <!-- Logo Google Colab -->
+    <g transform="translate(18,46) scale(1.1)">
+      <circle cx="-5.2" cy="0" r="4.8" fill="none" stroke="#F9AB00" stroke-width="2.5"/>
+      <circle cx="5.2" cy="0" r="4.8" fill="none" stroke="#E37400" stroke-width="2.5"/>
+      <path d="M -2.2,-3.8 A 4.8,4.8 0 0 1 -2.2,3.8" fill="none" stroke="#F9AB00" stroke-width="2.5"/>
+    </g>
+    <text x="44" y="21" font-size="11" font-weight="700" fill="#1e1e1e">Python · Colab</text>
+    <text x="44" y="38" font-size="9.5" fill="#666666">scikit-learn</text>
+  </g>
+
+  <line x1="416" y1="62" x2="458" y2="62" stroke="#2b2b2b" stroke-width="1.4" marker-end="url(#flecha)"/>
+
+  <!-- 3. Modelo exportado (cubo/paquete grande monocromático) -->
+  <g transform="translate(474,36)">
+    <polygon points="22,4 42,14 22,24 2,14" fill="#d9d9d9" stroke="#1e1e1e" stroke-width="1.5"/>
+    <polygon points="2,14 22,24 22,48 2,38" fill="#ebebeb" stroke="#1e1e1e" stroke-width="1.5"/>
+    <polygon points="42,14 22,24 22,48 42,38" fill="#bdbdbd" stroke="#1e1e1e" stroke-width="1.5"/>
+    <text x="54" y="21" font-size="11" font-weight="700" fill="#1e1e1e">Modelo ML</text>
+    <text x="54" y="38" font-size="9.5" fill="#666666">JSON / ONNX</text>
+  </g>
+</g>
+
+<!-- Desarrollo (abierto y limpio como la arquitectura original) -->
+<g transform="translate(268,622)">
+  <polygon points="18,0 34,9 34,27 18,36 2,27 2,9" fill="#5FA04E"/>
+  <text x="18" y="22" text-anchor="middle" font-size="10.5" font-weight="800" fill="#ffffff">JS</text>
+  <text x="44" y="16" font-size="10.5" font-weight="700" fill="#1e1e1e">Node.js + npm</text>
+  <text x="44" y="30" font-size="9" fill="#666666">build</text>
+</g>
+
+<text x="424" y="646" text-anchor="middle" font-size="16" font-weight="700" fill="#888888">+</text>
+
+<g transform="translate(456,622)">
+  <path d="M 5 22 A 13 13 0 0 1 31 22" fill="none" stroke="#0000CC" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="2" y="19" width="5.5" height="12" rx="2.5" fill="#0000CC"/>
+  <rect x="28.5" y="19" width="5.5" height="12" rx="2.5" fill="#0000CC"/>
+  <polyline points="8,24 12,24 15,14 18,30 21,17 24,24 28,24" fill="none" stroke="#FF8C00" stroke-width="2.2" stroke-linejoin="round"/>
+  <text x="44" y="16" font-size="10.5" font-weight="700" fill="#1e1e1e">Audacity</text>
+  <text x="44" y="30" font-size="9" fill="#666666">pistas MP3</text>
+</g>
+
+<line x1="594" y1="640" x2="652" y2="640" stroke="#2b2b2b" stroke-width="1.3" marker-end="url(#flecha)"/>
+
+<g transform="translate(668,618)">
+  <g transform="translate(20,20) rotate(45)">
+    <rect x="-14" y="-14" width="28" height="28" rx="4" fill="#F05032"/>
+  </g>
+  <line x1="15" y1="14" x2="25" y2="24" stroke="#ffffff" stroke-width="2"/>
+  <line x1="20" y1="19" x2="20" y2="27" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="15" cy="14" r="2.4" fill="#ffffff"/>
+  <circle cx="25" cy="24" r="2.4" fill="#ffffff"/>
+  <circle cx="20" cy="27" r="2.4" fill="#ffffff"/>
+  <text x="48" y="18" font-size="10.8" font-weight="700" fill="#1e1e1e">Git + GitHub</text>
+  <text x="48" y="33" font-size="9" fill="#666666">repositorio</text>
+</g>
+
+<!-- ================= COLUMNA 3: NUBE (COMPACTA E ICÓNICA) ================= -->
+
+<!-- Flechas Cliente web <-> Supabase -->
+<line x1="908" y1="198" x2="964" y2="198" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<rect x="912" y="180" width="48" height="14" fill="#ffffff"/>
+<text x="936" y="191" text-anchor="middle" font-size="8.8" font-weight="600" fill="#333333">HTTPS</text>
+
+<line x1="966" y1="252" x2="910" y2="252" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<rect x="918" y="258" width="36" height="14" fill="#ffffff"/>
+<text x="936" y="269" text-anchor="middle" font-size="8.8" font-weight="600" fill="#333333">JSON</text>
+
+<!-- Nube Supabase (simple e icónica) -->
+<g transform="translate(960,112)">
+  <path d="M 46 254
+           L 236 254
+           C 268 254, 284 226, 280 192
+           C 278 160, 260 140, 240 134
+           C 246 84, 218 44, 178 48
+           C 162 12, 118 2, 86 24
+           C 52 14, 22 40, 22 82
+           C 0 92, -4 130, 8 164
+           C -4 200, 12 254, 46 254 Z"
+        fill="#f5f5f5" stroke="#1e1e1e" stroke-width="1.7"/>
+
+  <!-- Logo Supabase a color + título centrado en la nube -->
+  <g transform="translate(96,56)">
+    <path d="M 1.1,9 C 0.5,9.8 -0.9,9.3 -0.9,8.3 L -0.9,-1 L 7.8,-1 C 9,-1 9.7,0.4 8.9,1.3 Z" fill="#249361"/>
+    <path d="M -1.1,-9 C -0.5,-9.8 0.9,-9.3 0.9,-8.3 L 0.9,1 L -7.8,1 C -9,1 -9.7,-0.4 -8.9,-1.3 Z" fill="#3ECF8E"/>
+  </g>
+  <text x="111" y="61" text-anchor="start" font-size="13.5" font-weight="700" fill="#1e1e1e">Supabase</text>
+  <text x="134" y="76" text-anchor="middle" font-size="9" font-style="italic" fill="#666666">Backend (BaaS)</text>
+
+  <!-- 3 íconos pequeños monocromáticos a la izquierda: Auth, RLS, PL/pgSQL -->
+  <g transform="translate(64,116)">
+    <circle cx="-7" cy="0" r="5" fill="none" stroke="#1e1e1e" stroke-width="2"/>
+    <line x1="-2" y1="0" x2="11" y2="0" stroke="#1e1e1e" stroke-width="2"/>
+    <line x1="6" y1="0" x2="6" y2="4.5" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="2" y="18" text-anchor="middle" font-size="9" font-weight="700" fill="#1e1e1e">Auth · API</text>
+  </g>
+
+  <g transform="translate(64,170)">
+    <path d="M 0 -10 L 9 -6 L 9 3 C 9 8 5 12 0 14 C -5 12 -9 8 -9 3 L -9 -6 Z" fill="#1e1e1e"/>
+    <polyline points="-4,1 -1,4 5,-3" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="0" y="26" text-anchor="middle" font-size="9" font-weight="700" fill="#1e1e1e">RLS · SQL</text>
+  </g>
+
+  <!-- Cilindro PostgreSQL grande y limpio a la derecha -->
+  <g transform="translate(148,96)">
+    <ellipse cx="38" cy="10" rx="34" ry="8.5" fill="#d9d9d9" stroke="#1e1e1e" stroke-width="1.5"/>
+    <path d="M 4 10 L 4 64 A 34 8.5 0 0 0 72 64 L 72 10" fill="#d9d9d9" stroke="#1e1e1e" stroke-width="1.5"/>
+    <ellipse cx="38" cy="10" rx="34" ry="8.5" fill="#ebebeb" stroke="#1e1e1e" stroke-width="1.5"/>
+    <path d="M 4 28 A 34 8.5 0 0 0 72 28" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+    <path d="M 4 46 A 34 8.5 0 0 0 72 46" fill="none" stroke="#1e1e1e" stroke-width="1.2"/>
+  </g>
+  <text x="186" y="190" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e1e1e">PostgreSQL</text>
+  <text x="186" y="205" text-anchor="middle" font-size="9" fill="#555555">7 tablas · métricas IA</text>
+</g>
+
+<!-- Nube Vercel (compacta e icónica) -->
+<g transform="translate(960,546)">
+  <path d="M 42 134
+           L 240 134
+           C 268 134, 282 112, 278 88
+           C 276 64, 258 48, 236 48
+           C 226 22, 200 8, 170 16
+           C 152 0, 118 0, 102 18
+           C 74 10, 46 24, 40 50
+           C 16 54, 4 76, 8 98
+           C 2 118, 16 134, 42 134 Z"
+        fill="#f5f5f5" stroke="#1e1e1e" stroke-width="1.7"/>
+
+  <polygon points="86,48 100,74 72,74" fill="#000000"/>
+  <text x="114" y="63" font-size="13" font-weight="700" fill="#1e1e1e">Vercel</text>
+  <text x="114" y="77" font-size="9" font-style="italic" fill="#666666">Hosting · CDN</text>
+
+  <text x="142" y="108" text-anchor="middle" font-size="9.5" font-weight="600" fill="#444444">App · Modelo ML · MP3</text>
+</g>
+
+<!-- Flecha Git -> Vercel -->
+<line x1="804" y1="640" x2="966" y2="640" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<rect x="862" y="621" width="48" height="15" fill="#ffffff"/>
+<text x="886" y="632" text-anchor="middle" font-size="9" font-weight="600" fill="#333333">Deploy</text>
+
+<!-- Flecha Vercel -> Cliente web (CDN) -->
+<polyline points="990,594 952,594 952,388 910,388" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<rect x="920" y="480" width="64" height="16" fill="#ffffff"/>
+<text x="952" y="492" text-anchor="middle" font-size="8.6" font-weight="600" fill="#333333">HTTPS · CDN</text>
+
+<!-- ================= COLUMNA 4: SALIDA ================= -->
+
+<!-- Flechas Supabase -> Salidas -->
+<polyline points="1236,248 1286,248 1286,326 1318,326" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<polyline points="1286,248 1286,158 1318,158" fill="none" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<rect x="1244" y="230" width="36" height="14" fill="#ffffff"/>
+<text x="1262" y="241" text-anchor="middle" font-size="9" font-weight="600" fill="#333333">JSON</text>
+
+<!-- Resultados del estudiante -->
+<g transform="translate(1324,114)">
+  <rect x="0" y="0" width="208" height="90" rx="6" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.6"/>
+  <circle cx="44" cy="31" r="13.5" fill="#1e1e1e"/>
+  <path d="M 21 70 C 21 50 67 50 67 70 Z" fill="#1e1e1e"/>
+  <rect x="84" y="21" width="102" height="11" fill="#2b2b2b"/>
+  <rect x="84" y="41" width="84" height="9.5" fill="#777777"/>
+  <rect x="84" y="60" width="92" height="9.5" fill="#777777"/>
+</g>
+<text x="1428" y="223" text-anchor="middle" font-size="12" font-weight="700" fill="#1e1e1e">Resultados</text>
+<text x="1428" y="238" text-anchor="middle" font-size="9.5" fill="#666666">nota y % atención</text>
+
+<!-- Panel de administrador (incluye gráficas SVG + Wilcoxon / t-test automático) -->
+<g transform="translate(1324,274)">
+  <rect x="0" y="0" width="208" height="104" rx="6" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.6"/>
+  <!-- Barras SVG -->
+  <rect x="18" y="48" width="18" height="36" fill="#6e6e6e"/>
+  <rect x="44" y="22" width="18" height="62" fill="#1e1e1e"/>
+  <rect x="70" y="34" width="18" height="50" fill="#4f4f4f"/>
+  <rect x="96" y="56" width="18" height="28" fill="#888888"/>
+  <!-- Divisor vertical -->
+  <line x1="126" y1="16" x2="126" y2="86" stroke="#d0d0d0" stroke-width="1.2"/>
+  <!-- Boxplot monocromático + indicador estadístico integrado -->
+  <g transform="translate(142,16)">
+    <line x1="10" y1="4" x2="10" y2="40" stroke="#1e1e1e" stroke-width="1.4"/>
+    <rect x="3" y="11" width="14" height="18" fill="#d9d9d9" stroke="#1e1e1e" stroke-width="1.3"/>
+    <line x1="3" y1="19" x2="17" y2="19" stroke="#1e1e1e" stroke-width="2"/>
+    <line x1="34" y1="14" x2="34" y2="48" stroke="#1e1e1e" stroke-width="1.4"/>
+    <rect x="27" y="23" width="14" height="17" fill="#777777" stroke="#1e1e1e" stroke-width="1.3"/>
+    <line x1="27" y1="31" x2="41" y2="31" stroke="#ffffff" stroke-width="2"/>
+  </g>
+  <rect x="136" y="70" width="60" height="17" rx="3" fill="#e8e8e8"/>
+  <text x="166" y="82" text-anchor="middle" font-size="8.5" font-weight="700" fill="#1e1e1e">Wilcoxon</text>
+</g>
+<text x="1428" y="397" text-anchor="middle" font-size="12" font-weight="700" fill="#1e1e1e">Panel admin</text>
+<text x="1428" y="413" text-anchor="middle" font-size="9.5" fill="#666666">gráficas SVG · Wilcoxon / t-test</text>
+
+<!-- Flecha Panel -> Excel -->
+<line x1="1428" y1="424" x2="1428" y2="486" stroke="#2b2b2b" stroke-width="1.5" marker-end="url(#flecha)"/>
+<text x="1464" y="458" text-anchor="middle" font-size="9.5" font-weight="600" fill="#333333">SheetJS</text>
+
+<!-- Archivo Excel -->
+<g transform="translate(1378,492)">
+  <path d="M 0 0 L 76 0 L 100 24 L 100 122 L 0 122 Z" fill="#ffffff" stroke="#1e1e1e" stroke-width="1.7"/>
+  <polygon points="76,0 76,24 100,24" fill="#cfcfcf" stroke="#1e1e1e" stroke-width="1.4"/>
+  <rect x="13" y="32" width="74" height="62" fill="#ffffff" stroke="#333333" stroke-width="1"/>
+  <rect x="13" y="32" width="74" height="15" fill="#1e1e1e"/>
+  <rect x="13" y="47" width="22" height="47" fill="#888888"/>
+  <line x1="35" y1="63" x2="87" y2="63" stroke="#999999"/>
+  <line x1="35" y1="79" x2="87" y2="79" stroke="#999999"/>
+  <line x1="61" y1="47" x2="61" y2="94" stroke="#999999"/>
+  <text x="50" y="113" text-anchor="middle" font-size="9.2" font-weight="700" fill="#1e1e1e">XLSX</text>
+</g>
+<text x="1428" y="636" text-anchor="middle" font-size="12" font-weight="700" fill="#1e1e1e">Archivo Excel</text>
+<text x="1428" y="652" text-anchor="middle" font-size="9.5" fill="#666666">datos y resumen estadístico</text>
+</svg>
