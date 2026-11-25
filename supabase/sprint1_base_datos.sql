@@ -1,19 +1,4 @@
--- ============================================================
--- RUIDO Y ATENCIÓN — SPRINT 1: BASE DE DATOS Y CONTENIDO (HITO 1)
--- ============================================================
--- Pegar TODO este archivo en: Supabase -> SQL Editor -> New query -> Run
---
--- Alcance (según la planificación del Sprint 1 · ACT-03 y ACT-04):
---   1. Crea las 7 tablas con PK, FK, CHECK, UNIQUE e índice único parcial.
---   2. Carga los 2 textos de lectura, las 20 preguntas y las 20 respuestas correctas.
---
--- Nota: la seguridad (RLS), los triggers, la función crear_sesion (Sprint 2)
--- y la vista resultados (Sprint 3) están en supabase/schema.sql. Cuando pases
--- al Sprint 2, puedes ejecutar supabase/schema.sql encima sin perder nada.
---
--- Este script borra primero cualquier versión anterior de estas tablas para
--- poder ejecutarse limpio en Supabase (no toca auth.users).
--- ============================================================
+-- Sprint 1 (ACT-03): tablas base y carga inicial de textos, preguntas y claves
 
 drop view if exists resultados;
 drop table if exists respuestas, escenarios, sesiones, respuestas_correctas,
@@ -22,7 +7,7 @@ drop sequence if exists contrabalanceo_seq;
 drop function if exists crear_sesion(smallint, text), crear_sesion(text),
                         marcar_correcta(), validar_etapa() cascade;
 
--- ---------- 1. TABLAS DEL MODELO ENTIDAD-RELACIÓN ----------
+-- Tablas del modelo
 
 create table perfiles (
   id uuid primary key references auth.users on delete cascade,
@@ -48,14 +33,13 @@ create table preguntas (
   unique (texto_id, orden)
 );
 
--- Las respuestas correctas viven aparte para que no lleguen al navegador
+-- Claves separadas para no exponerlas al navegador
 create table respuestas_correctas (
   pregunta_id int primary key references preguntas(id),
   correcta smallint not null check (correcta between 0 and 3)
 );
 
--- El orden de escenarios y el texto de cada sonido se guardan en "escenarios".
--- "completada" se calcula automáticamente a partir de "etapa".
+-- completada se calcula automáticamente a partir de etapa
 create table sesiones (
   id uuid primary key default gen_random_uuid(),
   usuario_id uuid not null references perfiles(id) on delete cascade,
@@ -66,7 +50,7 @@ create table sesiones (
   creada_en timestamptz not null default now()
 );
 
--- Un estudiante solo puede tener una sesión abierta a la vez
+-- Solo una sesión abierta por estudiante
 create unique index una_sesion_abierta
   on sesiones (usuario_id) where etapa <> 'completada';
 create index sesiones_usuario_id_idx on sesiones (usuario_id);
@@ -95,7 +79,7 @@ create table respuestas (
   unique (escenario_id, orden)
 );
 
--- ---------- 2. CONTENIDO: LOS DOS TEXTOS (MISMA EXTENSIÓN Y ESTRUCTURA) ----------
+-- Textos de lectura (extensión equivalente)
 
 insert into textos (id, titulo, contenido, num_palabras) values
 (1, 'La isla de Kervalen', $t1$La isla de Kervalen se encuentra en el Atlántico norte, a unas seis horas de navegación del puerto continental más cercano. Su nombre proviene de la lengua de sus primeros pobladores, en la que la palabra kerva significaba niebla y la terminación len quería decir tierra. Los marinos la llamaban por eso la tierra de la niebla, ya que durante buena parte del año una bruma espesa cubre sus acantilados y solo se despeja unas horas al mediodía.
@@ -117,7 +101,7 @@ La construcción más conocida del valle es el puente de Siete Arcos, de sesenta
 
 En la actualidad, el mayor problema de Tarmiza es el retroceso del glaciar Umón, que alimenta el río y reduce el agua disponible desde hace tres décadas. El consejo del valle ha construido estanques de piedra, llamados espejos, para guardar el agua de los deshielos, con resultados todavía parciales. Sus dos mil trescientos habitantes discuten, además, si deben aceptar la construcción de un túnel que acorte el viaje hacia el llano, una obra que cambiaría para siempre la vida apartada del valle.$t2$, 334);
 
--- ---------- 3. PREGUNTAS (10 POR TEXTO, 4 OPCIONES) ----------
+-- Preguntas (10 por texto)
 
 insert into preguntas (texto_id, orden, enunciado, opciones) values
 (1, 1, '¿Qué significaba la palabra kerva en la lengua de los primeros pobladores?',
@@ -161,7 +145,7 @@ insert into preguntas (texto_id, orden, enunciado, opciones) values
 (2, 10, '¿Para qué construyó el consejo del valle los estanques llamados espejos?',
  '["Para criar peces","Para guardar el agua de los deshielos","Para regar los corrales","Para atraer visitantes"]');
 
--- ---------- 4. RESPUESTAS CORRECTAS DE CADA PREGUNTA (ÍNDICE 0–3) ----------
+-- Respuestas correctas (índice 0-3)
 
 insert into respuestas_correctas (pregunta_id, correcta)
 select p.id,
@@ -189,23 +173,8 @@ select p.id,
   end
 from preguntas p;
 
--- ---------- 5. CONSULTAS DE VERIFICACIÓN PARA EL HITO 1 (ACT-04) ----------
--- Selecciona una consulta y pulsa Run en el SQL Editor para demostrar la base:
---
--- 1) Ver los dos textos y su extensión:
---    select id, titulo, num_palabras from textos order by id;
---
--- 2) Comprobar que cada texto tiene 10 preguntas y 10 respuestas correctas:
---    select t.id, t.titulo, count(p.id) as preguntas, count(rc.pregunta_id) as respuestas_correctas
---    from textos t
---    join preguntas p on p.texto_id = t.id
---    join respuestas_correctas rc on rc.pregunta_id = p.id
---    group by t.id, t.titulo
---    order by t.id;
---
--- 3) Listar las 20 preguntas con su respuesta correcta:
---    select t.titulo, p.orden, p.enunciado, p.opciones ->> rc.correcta as respuesta_correcta
---    from preguntas p
---    join textos t on t.id = p.texto_id
---    join respuestas_correctas rc on rc.pregunta_id = p.id
---    order by t.id, p.orden;
+-- Consultas de verificación (Hito 1)
+-- select id, titulo, num_palabras from textos order by id;
+-- select t.id, t.titulo, count(p.id) as preguntas, count(rc.pregunta_id) as claves
+-- from textos t join preguntas p on p.texto_id = t.id join respuestas_correctas rc on rc.pregunta_id = p.id
+-- group by t.id, t.titulo order by t.id;
