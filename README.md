@@ -37,3 +37,14 @@ Este repositorio contiene los entregables correspondientes al **Sprint 1** del d
 1. Abrir **SQL Editor → New query** en el proyecto de Supabase.
 2. Pegar el contenido completo de [`supabase/sprint1_base_datos.sql`](supabase/sprint1_base_datos.sql) y pulsar **Run**.
 3. Ejecutar las consultas de verificación incluidas al final del script para comprobar los 2 textos, las 20 preguntas y sus 20 respuestas correctas.
+
+---
+
+## Avance · Sprint 2 (Hito 2: Backend en Supabase y audio)
+
+- **Autenticación, seguridad RLS, rol administrador y contrabalanceo (`ACT-05`, `ACT-06`, `ACT-08`):** [`supabase/sprint2_backend.sql`](supabase/sprint2_backend.sql)
+  - Enlace automático de cuentas registradas en Supabase Auth (`auth.users`) con `public.perfiles` y sincronización de rol en el JWT.
+  - Políticas **RLS** activas en las 7 tablas (`estudiante`: lectura/escritura solo sobre datos propios; `admin`: solo lectura sobre resultados; `respuestas_correctas`: bloqueada desde el navegador).
+  - Secuencia `contrabalanceo_seq`, función RPC `crear_sesion(p_audifono)` con asignación equilibrada en 4 combinaciones y trigger `validar_etapa()` para avance secuencial.
+- **Calificación en servidor (`ACT-09`):** [`supabase/sprint2_act09_calificacion.sql`](supabase/sprint2_act09_calificacion.sql)
+- **Pistas de audio y documentación (`ACT-07`, `ACT-09`):** [`docs/fuentes-audio-sprint2.md`](docs/fuentes-audio-sprint2.md), [`public/audio/ruido.mp3`](public/audio/ruido.mp3) y [`public/audio/calma.mp3`](public/audio/calma.mp3)
